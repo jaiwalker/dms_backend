@@ -1,0 +1,41 @@
+{
+  "name": "jai/laravel-authentication-acl",
+  "description": "Laravel authentication and ACL package with a cool admin panel",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "jai",
+      "email": "kora.jayaram@gmail.com"
+    }
+  ],
+ 
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "4.2.*",
+    "intervention/image": "2.*",
+    "cartalyst/sentry": "2.1.*",
+    "jai/laravel-library": "1.0.*",
+    "gregwar/captcha": "1.0.11"
+  },
+  "require-dev": {
+    "mockery/mockery": "0.9.0",
+    "orchestra/testbench": "2.2.*",
+    "doctrine/dbal": "v2.4.2",
+    "fzaninotto/faker": "v1.3.0",
+    "phpunit/phpunit": "4.2.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "Jai\\Authentication": "src/"
+    },
+    "psr-4": {
+      "Jai\\Authentication\\Tests\\": "tests/"
+    },
+    "classmap": [
+      "src/controllers",
+      "src/commands",
+      "src/seeds"
+    ]
+  },
+  "minimum-stability": "stable"
+}

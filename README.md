@@ -41,6 +41,9 @@ NOTE : If you are editing this - just check the composer.json file
 # Recent Change Log :
  # remove Blog dependencies and moved them  to blog specific package
 
+=======
+NOTE : If you are editing this - just check the composer.json file 
+
 
 Laravel Authentication ACL is a Laravel 4 package, based on <a href="https://github.com/cartalyst/sentry" target="_blank">sentry2</a>. <br/>
 This package is made with the purpose of helping other developers to set-up

@@ -60,11 +60,7 @@ Route::get('/user/signup', [
 ]);
 Route::get('/user/email-confirmation', ['uses' => "Jai\\Authentication\\Controllers\\UserController@emailConfirmation"]);
 Route::get('/user/signup-success', 'Jai\Authentication\Controllers\UserController@signupSuccess');
-<<<<<<< HEAD
 
-=======
-
->>>>>>> ffe665bbe9828c33f16e34749a34ddcdb9b8cf02
 /*
   |--------------------------------------------------------------------------
   | Admin side
@@ -80,11 +76,7 @@ Route::group(['before' => ['admin_logged', 'can_see']], function ()
             'as'   => 'dashboard.default',
             'uses' => 'Jai\Authentication\Controllers\DashboardController@base'
     ]);
-<<<<<<< HEAD
 
-=======
-
->>>>>>> ffe665bbe9828c33f16e34749a34ddcdb9b8cf02
    Route::get('/example', [
            'as' =>'example',
            'uses' => 'Jai\Authentication\Controllers\UserController@getList'
@@ -162,11 +154,7 @@ Route::group(['before' => ['admin_logged', 'can_see']], function ()
             'as'   => 'groups.list',
             'uses' => 'Jai\Authentication\Controllers\GroupController@getList'
     ]);
-<<<<<<< HEAD
 
-=======
-
->>>>>>> ffe665bbe9828c33f16e34749a34ddcdb9b8cf02
     Route::get('/admin/groups/edit', [
             'as'   => 'groups.edit',
             'uses' => 'Jai\Authentication\Controllers\GroupController@editGroup'
@@ -208,15 +196,7 @@ Route::group(['before' => ['admin_logged', 'can_see']], function ()
             'as'     => 'permission.delete',
             'uses'   => 'Jai\Authentication\Controllers\PermissionController@deletePermission'
     ]);
-<<<<<<< HEAD
 
-
-});
-
-
-//////////////////// Other routes //////////////////////////
-
-=======
 
 
 });
@@ -224,7 +204,7 @@ Route::group(['before' => ['admin_logged', 'can_see']], function ()
 
 //////////////////// Other routes //////////////////////////
 
->>>>>>> ffe665bbe9828c33f16e34749a34ddcdb9b8cf02
+
 if(Config::get('laravel-authentication-acl::handle_errors'))
 {
     App::error(function (RuntimeException $exception, $code)

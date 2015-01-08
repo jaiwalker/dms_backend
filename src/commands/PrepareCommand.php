@@ -29,6 +29,7 @@ class PrepareCommand extends Command {
    */
   public function __construct($call_wrapper = null)
   {
+    //$this->info('## running Prepare command ##');
     $this->call_wrapper = $call_wrapper ? $call_wrapper : new CallWrapper($this);
     parent::__construct();
   }
@@ -40,7 +41,9 @@ class PrepareCommand extends Command {
    */
   public function fire()
   {
-    $this->call_wrapper->call('config:publish', ['package' => 'Jai/laravel-authentication-acl' ] );
+   // $this->call_wrapper->call('config:publish', ['package' => 'Jai/laravel-authentication-acl' ] );
+//var_dump('config:publish', array('--path' => "workbench/jai/laravel-authentication-acl/src/config") 'jai/laravel-authentication-acl' ); die();
+    $this->call_wrapper->call('config:publish', array('--path' => "workbench/jai/laravel-authentication-acl/src/config",'package' =>'jai/laravel-authentication-acl') );
 
     $this->info('## Laravel Authentication ACL prepared successfully ##');
 

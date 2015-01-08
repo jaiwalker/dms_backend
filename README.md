@@ -5,15 +5,25 @@ NOTE : If you are editing this - just check the composer.json file
  Acl  wokring DOC https://medium.com/laravel-4/laravel-4-acl-a7f2fa1f9791
 # Setps to create a new laravel  package 
    
-   ->Command Line  your sites Dir  "composer create-project laravel/laravel your-project-name "
+   ->Command Line  your sites Dir  "composer create-project laravel/laravel=4.2.11 your-project-name "
       This should Install laravel  in the project name specified 
+
+      OR 
+
+      composer.json
+      "require": {
+         "laravel/laravel": "v4.2.11",
+    },
+  
   ->Now Create a database table   and config to respective DB  file If  you have set up  an Env make sure  that the DB config is in the right folder. 
 
 
 # Steps on how to install  this for your workbench along with creating a new workbench package :
 
    Install laravel using  composer  or laravel specific installation
+
    Set you your local ENV
+   
    For Building  a new package ;
     -  go  to  config/workbench.php  
         name ='jai' email = 'your choice of email '
@@ -52,7 +62,7 @@ NOTE : If you are editing this - just check the composer.json file
    php artisan authentication:install -  this will do all migrations , DB seeding and assests 
 
  Now   ready to go :    laravel/admin - 
- 
+
     http://url_of_your_application/login the client login page (after logging in will redirect you to the home page) [ username:admin@admin.com password:password ]
     http://url_of_your_application/admin/login the admin login page (after logging in will redirect you to the admin panel) [ username:admin@admin.com password:password ]
     http://url_of_your_application/user/signup the new user signup form (to register a new user)

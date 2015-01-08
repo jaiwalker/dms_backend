@@ -42,7 +42,7 @@ class InstallCommand extends Command {
 	 */
 	public function fire()
 	{
-    $this->call_wrapper->call('migrate', ['--package' => 'Jai/laravel-authentication-acl', '--database' => "authentication" ] );
+    $this->call_wrapper->call('migrate', ['--bench' => 'Jai/laravel-authentication-acl', '--database' => "authentication" ] );
 
     $this->db_seeder->run();
 

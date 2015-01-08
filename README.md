@@ -56,10 +56,14 @@ NOTE : If you are editing this - just check the composer.json file
    run  "composer update"   and "composer dump-autoload" 
          
   New Feature added now ( Artisan Command  files ) : http://ryantablada.com/post/creating-an-installer-script
+   
+   Come out of the workbench  folder - Package_name > php artisan dump-autolaod
+
 
    php artisan authentication:prepare  - this  will publish the config to app/packages/jai/laravel-authentication-acl folder 
 
    php artisan authentication:install -  this will do all migrations , DB seeding and assests 
+   Note : if you find  any DB error   you have forgot to run    " php artisan dump-autoload"
 
  Now   ready to go :    laravel/admin - 
 

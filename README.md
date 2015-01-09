@@ -3,21 +3,18 @@ laravel-authentication-acl    DMS BACKEND
 
 NOTE : If you are editing this - just check the composer.json file
  Acl  wokring DOC https://medium.com/laravel-4/laravel-4-acl-a7f2fa1f9791
-# Setps to create a new laravel  package 
+# Setp's to create a new laravel  package 
    
    ->Command Line  your sites Dir   
-
-      ```php
+      
       composer create-project laravel/laravel=4.2.11 your-project-name
-     ``` 
+     
       OR 
-    ```
+   
       composer.json
       "require": {
          "laravel/laravel": "v4.2.11",
     },
-    ``` 
-        
   
    ->this  will install laravel 
   
@@ -43,15 +40,14 @@ NOTE : If you are editing this - just check the composer.json file
 
    run this  : 
                
-               git clone  https://github.com/jaiwalker/dms_backend.git laravel-authentication-acl
-               git clone  https://github.com/jaiwalker/dms_backend_lib.git  laravel-library
+       git clone  https://github.com/jaiwalker/dms_backend.git laravel-authentication-acl
+       git clone  https://github.com/jaiwalker/dms_backend_lib.git  laravel-library
 
    this should create 2 new folders in jai folder  
 
       jai/
       --- -/laravel-library
       --- -/laravel-authentication-acl
-      
       
    Now move to laravel-authentication-acl folder :
    
@@ -98,10 +94,10 @@ NOTE : If you are editing this - just check the composer.json file
 
      php artisan authentication:install 
   
-  -  this will do all migrations , DB seeding and assests 
+  -  this will do all migrations , DB seeding and assets 
    Tips  : if you find  any DB error   you have forgot to run    " php artisan dump-autoload"
-            if  you encounter db.premission  unable to loacte error .- it means  that  the folder name  ( vendor name ) must be wrong  
-            - case sensetive - if  you want to alter  file names : workbench/jai/laravel-authenticater-acl/src/commands/installCommand.php - fire method  
+            if  you encounter db.permission  unable to locate error .- it means  that  the folder name  ( vendor name ) must be wrong  
+            - case sensitive - if  you want to alter  file names : workbench/jai/laravel-authentication-acl/src/commands/installCommand.php - fire method  
  
  Alternate Solutions : you can run these command individually
      
@@ -111,7 +107,7 @@ NOTE : If you are editing this - just check the composer.json file
      
      php artisan asset:publish --bench="jai/laravel-authentication-acl"
      
-     php
+      I am unable to seed db using this 
  
    
  Now   ready to go :    laravel/admin - 

@@ -3,64 +3,113 @@ laravel-authentication-acl    DMS BACKEND
 
 NOTE : If you are editing this - just check the composer.json file
  Acl  wokring DOC https://medium.com/laravel-4/laravel-4-acl-a7f2fa1f9791
-# Setps to create a new laravel  package 
+# Setp's to create a new laravel  package 
    
-   ->Command Line  your sites Dir  "composer create-project laravel/laravel=4.2.11 your-project-name "
-      This should Install laravel  in the project name specified 
-
+   ->Command Line  your sites Dir   
+      
+      composer create-project laravel/laravel=4.2.11 your-project-name
+     
       OR 
-
+   
       composer.json
       "require": {
          "laravel/laravel": "v4.2.11",
     },
   
-  ->Now Create a database table   and config to respective DB  file If  you have set up  an Env make sure  that the DB config is in the right folder. 
+   ->this  will install laravel 
+  
+   ->Now Create a database table   and config to respective DB  file.
+     If  you have set up  an Env make sure  that the DB config is in the right folder. 
 
 
 # Steps on how to install  this for your workbench along with creating a new workbench package :
-
-   Install laravel using  composer  or laravel specific installation
-
-   Set you your local ENV
    
    For Building  a new package ;
-    -  go  to  config/workbench.php  
-        name ='jai' email = 'your choice of email '
-   Run this command -   php artisan workbench Jai/new_Package_name
+    -  go  to  
+        
+        config/workbench.php  
+        name ='jai'  email = 'your choice of email ' 
+             
+   Run form root folder 
+      
+     php artisan workbench Jai/new_Package_name
 
    # TO Install ACL:
    
    On command line navigate to workbench/jai
 
-   run this  : git clone  https://github.com/jaiwalker/dms_backend.git laravel-authentication-acl
-               git clone  https://github.com/jaiwalker/dms_backend_lib.git  laravel-library
+   run this  : 
+               
+       git clone  https://github.com/jaiwalker/dms_backend.git laravel-authentication-acl
+       git clone  https://github.com/jaiwalker/dms_backend_lib.git  laravel-library
 
    this should create 2 new folders in jai folder  
 
       jai/
       --- -/laravel-library
       --- -/laravel-authentication-acl
+      
+   Now move to laravel-authentication-acl folder :
+   
+   Run :
+   
+     composer update  
+     and
+     composer dump-autoload
+     
+   
+   This should load all composer dependencies to vendor folder.
+   Do the same for workbench/jai/laravel-library/ folder 
+   run  
+   
+     composer update   
+     and 
+     composer dump-autoload 
 
    Now Go to file app/config/app.php add to the 'providers'
     add the following in the array :
 
     'Jai\Authentication\AuthenticationServiceProvider',
 
-  
-   Now navigate into folder workbench/jai/laravel-authentication-acl/   
-     run "composer update"  and "composer dump-autoload" 
+   Now navigate to root  folder    
+     run 
+        
+        php artisan dump-autload  
+        and
+        composer dump-autoload 
+
+   Now  run
            
-   this should load all composer dependencies to vendor folder.
-   Do the same for workbench/jai/laravel-library/ folder 
-   run  "composer update"   and "composer dump-autoload" 
-         
+           php artisan 
+   Now you have to see two new artisan command : authentication:prepare or authentication:install in the list     
+   
+   Tips: if  you encounter any error  when you run this move this  above 'Illuminate\Workbench\WorkbenchServiceProvider',
+      laravel  bug  i suppose.
+             
   New Feature added now ( Artisan Command  files ) : http://ryantablada.com/post/creating-an-installer-script
+   
+    php artisan authentication:prepare  
+  
+  - this  will publish the config to app/packages/jai/laravel-authentication-acl folder 
 
-   php artisan authentication:prepare  - this  will publish the config to app/packages/jai/laravel-authentication-acl folder 
-
-   php artisan authentication:install -  this will do all migrations , DB seeding and assests 
-
+     php artisan authentication:install 
+  
+  -  this will do all migrations , DB seeding and assets 
+   Tips  : if you find  any DB error   you have forgot to run    " php artisan dump-autoload"
+            if  you encounter db.permission  unable to locate error .- it means  that  the folder name  ( vendor name ) must be wrong  
+            - case sensitive - if  you want to alter  file names : workbench/jai/laravel-authentication-acl/src/commands/installCommand.php - fire method  
+ 
+ Alternate Solutions : you can run these command individually
+     
+     php artisan config:publish --path="workbench/jai/laravel-authentication-acl/src/config" jai/laravel-authentication-acl
+     
+     php artisan migrate --bench='jai/laravel-authentication-acl'  // folder name jai/Jai 
+     
+     php artisan asset:publish --bench="jai/laravel-authentication-acl"
+     
+      I am unable to seed db using this 
+ 
+   
  Now   ready to go :    laravel/admin - 
 
     http://url_of_your_application/login the client login page (after logging in will redirect you to the home page) [ username:admin@admin.com password:password ]

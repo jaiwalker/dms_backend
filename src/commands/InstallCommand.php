@@ -42,11 +42,11 @@ class InstallCommand extends Command {
 	 */
 	public function fire()
 	{
-    $this->call_wrapper->call('migrate', ['--package' => 'Jai/laravel-authentication-acl', '--database' => "authentication" ] );
+    $this->call_wrapper->call('migrate', ['--bench' => 'jai/laravel-authentication-acl', '--database' => "authentication" ] );
 
     $this->db_seeder->run();
 
-    $this->call_wrapper->call('asset:publish',['--bench' => 'Jai/laravel-authentication-acl']);
+    $this->call_wrapper->call('asset:publish',['--bench' => 'jai/laravel-authentication-acl']);
 
     $this->info('## Laravel Authentication ACL Installed successfully ##');
 
